@@ -10,14 +10,19 @@ local pd <const> = playdate
 local gfx <const> = pd.graphics
 
 -- Import library
-import "../source/helloWorld"
+import "../source/sceneManager"
 import "../tests/testRunner"
 
+-- Import scenes
+import "scene"
+import "otherScene"
+
 -- Initialize object
-local helloWorld = HelloWorld()
+SCENE_MANAGER = SceneManager()
+SCENE_MANAGER:switchScene(Scene)
 
 -- Run tests
-Runner:test("tests/testRunner.lua", function()
+TestRunner:test("tests/testRunner.lua", function()
     -- Test cases go here
     -- Example: assertEqual(1, 1)
 end)
